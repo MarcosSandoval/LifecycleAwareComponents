@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LifecycleAwareComponents</string>
+    <string name="action_1">Action 1</string>
+    <string name="action_2">Action 2</string>
+    <string name="action_3">Action 3</string>
+    <string name="ok_button">Ok</string>
+    <string name="report_action">Action %1$d performed</string>
+</resources>
