@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/hello"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,30 +20,49 @@
         android:id="@+id/btn_action1"
         android:layout_width="117dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
         android:text="@string/action_1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_action2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_action2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btn_action2"
         android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
         android:text="@string/action_2"
-        app:layout_constraintEnd_toStartOf="@+id/btn_action3"
-        app:layout_constraintStart_toEndOf="@+id/btn_action1"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_action3"
+        app:layout_constraintEnd_toEndOf="@+id/btn_action1"
+        app:layout_constraintStart_toStartOf="@+id/btn_action1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action1" />
 
     <Button
         android:id="@+id/btn_action3"
         android:layout_width="118dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/action_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_action2"
+        app:layout_constraintStart_toStartOf="@+id/btn_action2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/jetpack_logo"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_action2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_jetpack" />
 
 </android.support.constraint.ConstraintLayout>

@@ -12,14 +12,29 @@ class AuditHelperLifecycleAware(private val lifecycle: Lifecycle ,private val ac
         action1.invoke("App started")
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun auditCreated(){
+        action1.invoke("App created")
+    }
+
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun auditPause(){
+    fun auditPaused(){
         action1.invoke("App paused")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun auditStop(){
+    fun auditStopped(){
         action1.invoke("App stopped")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun auditDestroyed(){
+        action1.invoke("App destroyed")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    fun auditResumed(){
+        action1.invoke("App resumed")
     }
 
     fun reportAction(action: String){

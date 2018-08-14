@@ -27,14 +27,14 @@ class CustomLifecycleOwner(private val context: Context) : LifecycleOwner {
     private fun onCreate(){
 
         var action1: (String) -> Unit = {
-            Log.i(TAG, it)
+            Log.i(TAG, String.format(context.getString(R.string.report_from_custom_lifecycle_owner) , it))
         }
 
         var action2: (String) -> Unit = {
             var dialog = AlertDialog.Builder(context)
             with(dialog){
-                setPositiveButton("OK", null)
-                setMessage(it)
+                setPositiveButton(context.getString(R.string.ok_button), null)
+                setMessage(String.format(context.getString(R.string.report_action) , it))
                 show()
             }
         }

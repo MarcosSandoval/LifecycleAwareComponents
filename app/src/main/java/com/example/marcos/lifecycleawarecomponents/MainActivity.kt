@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
 
 
         var action1: (String) -> Unit = {
-            Log.i(TAG, it)
+            Log.i(TAG, String.format(getString(R.string.report_from_main_activity) , it))
         }
 
         var action2: (String) -> Unit = {
             var dialog = AlertDialog.Builder(this)
             with(dialog){
                 setPositiveButton(getString(R.string.ok_button), null)
-                setMessage(it)
+                setMessage(String.format(getString(R.string.report_from_main_activity) , it))
                 show()
             }
 
