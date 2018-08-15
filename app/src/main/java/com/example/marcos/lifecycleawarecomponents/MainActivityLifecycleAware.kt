@@ -10,6 +10,11 @@ class MainActivityLifecycleAware : AppCompatActivity() {
 
     private var auditHelper: AuditHelperLifecycleAware? = null
     private val TAG = "AUDIT"
+
+    /**
+     * We get the lifecycle of the current activity and
+     * stored it on a variable
+     */
     private var activityLifecycle = lifecycle
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +40,13 @@ class MainActivityLifecycleAware : AppCompatActivity() {
         //Set listener for the buttons
         btn_action1.setOnClickListener { auditHelper?.reportAction(String.format(getString(R.string.report_action) , 1))}
         btn_action2.setOnClickListener { auditHelper?.reportAction(String.format(getString(R.string.report_action) , 2))}
-        btn_action3.setOnClickListener { auditHelper?.reportAction(String.format(getString(R.string.report_action) , 3)) }
-        activityLifecycle.addObserver(auditHelper!!)
+        btn_action3.setOnClickListener { auditHelper?.reportAction(String.format(getString(R.string.report_action) , 3))
+
+            /**
+             * The magic happens here, we are indicating we want our AuditHelperLifecycleAware
+             * instance to be notified of the state changes of this LifecycleOwner
+             */
+            activityLifecycle.addObserver(auditHelper!!)
        CustomLifecycleOwner(context = this)
     }
 }

@@ -4,7 +4,9 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.OnLifecycleEvent
 
-class AuditHelperLifecycleAware(private val lifecycle: Lifecycle ,private val action1: (String) -> Unit, private val action2: (String) -> Unit) : LifecycleObserver{
+class AuditHelperLifecycleAware(private val lifecycle: Lifecycle ,
+                                private val action1: (String) -> Unit,
+                                private val action2: (String) -> Unit) : LifecycleObserver{
 
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
